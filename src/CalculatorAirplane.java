@@ -11,6 +11,8 @@ public class CalculatorAirplane {
 
     double distance;
 
+    int extraWeight=0;
+
     public void outpr() {
         Scanner scan = new Scanner(System.in);
         System.out.println("enter mishcal of airplane ");
@@ -24,16 +26,12 @@ public class CalculatorAirplane {
       return teoza;
         }
 
-    public void calcExtraWeight()
+    public double calcExtraWeight()
     {
-        // calc a
-        // if(calcTimeTillDeparture()>1)
-       // {
-       //     int extraWeight =1;
-      //      for (; calcTimeTillDeparture()>1; extraWeight++) {
-      //          teoza =enginepower/(masa-extraWeight);
-      //      }
-        //     System.out.println("teozaSecond: " + teoza + "Extra Weight: "+ extraWeight );
+        extraWeight++;
+           masa--;
+        calcTimeTillDeparture();
+        return extraWeight;
     }
 
         public double calcTimeTillDeparture() { //
@@ -41,9 +39,13 @@ public class CalculatorAirplane {
         double temp;
         calcteoza();
         temp = flightAirSpeed/teoza;  //   v/a == t
-        System.out.println("time: " + temp);
         TimeTillDeparture = temp;
-        return temp;
+            if(TimeTillDeparture>1)
+            {
+                return calcExtraWeight();
+            }
+            System.out.println("time: " + temp + "  extra weight " + extraWeight);
+            return temp;
     }
     public double calcDistance() { //
         calcTimeTillDeparture();
