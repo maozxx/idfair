@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 
 public class CalculatorAirplane {
+
+    // GLOBAL VARIABLES
     int flightAirSpeed = 140;
     double enginepower = 100000; // N ניוטון
     double masa ;
@@ -13,20 +15,22 @@ public class CalculatorAirplane {
 
     int extraWeight=0;
 
-    public void outpr() {
+
+    public void inprt() {  // GET INPUT
         Scanner scan = new Scanner(System.in);
         System.out.println("enter mishcal of airplane ");
 
         masa = scan.nextInt();  //
-        System.out.println("mishcal: " + masa);
+        if(!(masa > 0 && masa <2147483647))// incase input is bad
+        System.out.println("MASS: " + masa);
     }
-    public double calcteoza() { // calc a
+    public double calcteoza() { // calc a and return it
         teoza =enginepower/masa;
-        System.out.println("teoza: " + teoza);
+        System.out.println("ACCELERTION: " + teoza);
       return teoza;
         }
 
-    public double calcExtraWeight()
+    public double calcExtraWeight() // returning the extra weight
     {
         extraWeight++;
            masa--;
