@@ -7,12 +7,9 @@ public class CalculatorAirplane {
     int flightAirSpeed = 140;
     double enginepower = 100000; // N ניוטון
     double masa =35000;
-
     double  teoza;
     double TimeTillDeparture ;
-
     double distance;
-
     int extraWeight=0;
 
 
