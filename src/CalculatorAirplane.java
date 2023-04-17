@@ -6,7 +6,7 @@ public class CalculatorAirplane {
     // GLOBAL VARIABLES
     int flightAirSpeed = 140;
     double enginepower = 100000; // N ניוטון
-    double masa ;
+    double masa =35000;
 
     double  teoza;
     double TimeTillDeparture ;
@@ -20,7 +20,7 @@ public class CalculatorAirplane {
         Scanner scan = new Scanner(System.in);
         System.out.println("enter mishcal of airplane ");
 
-        masa = scan.nextInt();  //
+        masa += scan.nextInt();  //
         if(!(masa > 0 && masa <2147483647))// incase input is bad
         System.out.println("MASS: " + masa);
     }
@@ -44,7 +44,7 @@ public class CalculatorAirplane {
         calcteoza();
         temp = flightAirSpeed/teoza;  //   v/a == t
         TimeTillDeparture = temp;
-            if(TimeTillDeparture>1)
+            if(TimeTillDeparture>60) // extreme case too much time check
             {
                 return calcExtraWeight();
             }
